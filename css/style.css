@@ -1,0 +1,135 @@
+/* Start Variables */
+:root {
+  --font-color: white;
+}
+/* End Variables */
+/* Start Global Rules */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Work Sans", sans-serif;
+  background-color: #373055;
+}
+.container {
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* Start Header */
+.header {
+  padding: 20px;
+  text-align: center;
+  color: var(--font-color);
+}
+.container {
+  margin-bottom: 100px;
+}
+input {
+  width: 100%;
+  margin: 5px 0 5px;
+  padding: 10px;
+  background-color: #111;
+  color: var(--font-color);
+  border-style: none;
+  border-radius: 7px;
+  outline: none;
+}
+input:focus {
+  background-color: #000;
+  transform: scale(1.1);
+}
+.calc {
+  display: flex;
+  flex-direction: row;
+}
+.calc input {
+  flex-basis: fit-content;
+}
+#total {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 7px;
+  background-color: #e78284;
+  flex-basis: 200px;
+  color: var(--font-color);
+}
+#total::before {
+  content: "Total: ";
+}
+button {
+  width: 100%;
+  border-style: none;
+  padding: 10px;
+  border-radius: 7px;
+  color: var(--font-color);
+  background-color: #2d2163;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.searchs button {
+  width: 45%;
+}
+button:hover {
+  background-color: #442ea3;
+  letter-spacing: 1px;
+}
+.searchs {
+  display: flex;
+  justify-content: space-between;
+}
+
+th {
+  color: var(--font-color);
+  padding: 10px;
+  border-top: 1px #7f6e6e solid;
+  border-bottom: 1px #7f6e6e solid;
+}
+#table {
+  width: 100%;
+  color: var(--font-color);
+  text-align: center;
+  margin-top: 30px;
+}
+td {
+  border-bottom: 1px #7f6e6e solid;
+}
+#deletall {
+  display: none;
+  margin-top: 5px;
+}
+#footer {
+  color: #000;
+  font-size: 18px;
+  display: block;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.fa {
+  color: #e90606;
+  margin: 0 3px;
+  font-size: 10px;
+}

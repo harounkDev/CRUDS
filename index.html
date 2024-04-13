@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cruds Project</title>
+
+    <!-- Render All Elements Normally -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <!-- Font Awesome Library -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!--Our Css Style-->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+  </head>
+  <body>
+    <!--Create Header-->
+    <div class="header">
+      <h1 class="head">CRUDS</h1>
+      <p class="explain">PRODUCT MANAGEMENT SYSTEM</p>
+    </div>
+    <!--Start Contents-->
+    <div class="container">
+      <!--Create From Collect Product Details-->
+
+      <input type="text" id="title" placeholder="title" />
+      <div class="calc">
+        <input
+          oninput="getTotal()"
+          type="number"
+          id="price"
+          placeholder="price"
+        />
+        <input
+          oninput="getTotal()"
+          type="number"
+          id="taxes"
+          placeholder="taxes"
+        />
+        <input oninput="getTotal()" type="number" id="ads" placeholder="ads" />
+        <input
+          oninput="getTotal()"
+          type="number"
+          id="discount"
+          placeholder="discount"
+        />
+        <span id="total"></span>
+      </div>
+      <input type="number" id="count" placeholder="count" />
+      <input type="text" id="category" placeholder="category" />
+      <button id="create" type="submit">Create</button>
+
+      <input
+        onkeyup="searchData(this.value)"
+        type="text"
+        id="search"
+        placeholder="search"
+      />
+      <!--Create Searchs Buttons-->
+      <div class="searchs">
+        <button onclick="getSearchMood(this.id)" id="bytitle">
+          Search By Title
+        </button>
+        <button onclick="getSearchMood(this.id)" id="bycategory">
+          Search By Category
+        </button>
+      </div>
+      <button id="deletall" onclick="delAll()"></button>
+
+      <!--Create Products Table-->
+
+      <table id="table">
+        <tr>
+          <th>ID</th>
+          <th>TITLE</th>
+          <th>PRICE</th>
+          <th>TAXES</th>
+          <th>ADS</th>
+          <th>DISCOUNT</th>
+          <th>TOTAL</th>
+          <th>CATEGORY</th>
+          <th>UPDATE</th>
+          <th>DELETE</th>
+        </tr>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+    <span id="footer">
+      Made with <i class="fa fa-heart pulse"></i> By Haroun Khenfri 2024
+    </span>
+    <script src="main.js"></script>
+  </body>
+</html>
