@@ -5,90 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cruds Project</title>
 
-    <!-- Render All Elements Normally -->
+    <!-- Normalize & Font Awesome -->
     <link rel="stylesheet" href="css/normalize.css" />
-    <!-- Font Awesome Library -->
     <link rel="stylesheet" href="css/all.min.css" />
-    <!--Our Css Style-->
     <link rel="stylesheet" href="css/style.css" />
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
   </head>
   <body>
-    <!--Create Header-->
+    <!-- Header -->
     <div class="header">
       <h1 class="head">CRUDS</h1>
       <p class="explain">PRODUCT MANAGEMENT SYSTEM</p>
     </div>
-    <!--Start Contents-->
-    <div class="container">
-      <!--Create From Collect Product Details-->
 
-      <input type="text" id="title" placeholder="title" />
+    <!-- Main Container -->
+    <div class="container">
+      <!-- Form Inputs -->
+      <div class="input-group">
+        <i class="fa fa-tag"></i>
+        <input type="text" id="title" placeholder="Product Title" />
+      </div>
+
       <div class="calc">
-        <input
-          oninput="getTotal()"
-          type="number"
-          id="price"
-          placeholder="price"
-        />
-        <input
-          oninput="getTotal()"
-          type="number"
-          id="taxes"
-          placeholder="taxes"
-        />
-        <input oninput="getTotal()" type="number" id="ads" placeholder="ads" />
-        <input
-          oninput="getTotal()"
-          type="number"
-          id="discount"
-          placeholder="discount"
-        />
+        <div class="input-group">
+          <i class="fa fa-dollar-sign"></i>
+          <input type="number" id="price" oninput="getTotal()" placeholder="Price" />
+        </div>
+        <div class="input-group">
+          <i class="fa fa-percent"></i>
+          <input type="number" id="taxes" oninput="getTotal()" placeholder="Taxes" />
+        </div>
+        <div class="input-group">
+          <i class="fa fa-bullhorn"></i>
+          <input type="number" id="ads" oninput="getTotal()" placeholder="Ads" />
+        </div>
+        <div class="input-group">
+          <i class="fa fa-gift"></i>
+          <input type="number" id="discount" oninput="getTotal()" placeholder="Discount" />
+        </div>
         <span id="total"></span>
       </div>
-      <input type="number" id="count" placeholder="count" />
-      <input type="text" id="category" placeholder="category" />
+
+      <div class="input-group">
+        <i class="fa fa-hashtag"></i>
+        <input type="number" id="count" placeholder="Count" />
+      </div>
+
+      <div class="input-group">
+        <i class="fa fa-folder-open"></i>
+        <input type="text" id="category" placeholder="Category" />
+      </div>
+
       <button id="create" type="submit">Create</button>
 
-      <input
-        onkeyup="searchData(this.value)"
-        type="text"
-        id="search"
-        placeholder="search"
-      />
-      <!--Create Searchs Buttons-->
-      <div class="searchs">
-        <button onclick="getSearchMood(this.id)" id="bytitle">
-          Search By Title
-        </button>
-        <button onclick="getSearchMood(this.id)" id="bycategory">
-          Search By Category
-        </button>
+      <!-- Search -->
+      <div class="input-group">
+        <i class="fa fa-search"></i>
+        <input type="text" id="search" placeholder="Search" onkeyup="searchData(this.value)" />
       </div>
+
+      <!-- Search Buttons -->
+      <div class="searchs">
+        <button onclick="getSearchMood(this.id)" id="bytitle">Search By Title</button>
+        <button onclick="getSearchMood(this.id)" id="bycategory">Search By Category</button>
+      </div>
+
       <button id="deletall" onclick="delAll()"></button>
 
-      <!--Create Products Table-->
+      <!-- Products Table -->
+ 
+<div class="table-wrapper">
+  <table id="table">
+    <tr>
+      <th>ID</th>
+      <th>TITLE</th>
+      <th>PRICE</th>
+      <th>TAXES</th>
+      <th>ADS</th>
+      <th>DISCOUNT</th>
+      <th>TOTAL</th>
+      <th>CATEGORY</th>
+      <th>UPDATE</th>
+      <th>DELETE</th>
+    </tr>
+    <tbody id="tbody"></tbody>
+  </table>
+</div>
 
-      <table id="table">
-        <tr>
-          <th>ID</th>
-          <th>TITLE</th>
-          <th>PRICE</th>
-          <th>TAXES</th>
-          <th>ADS</th>
-          <th>DISCOUNT</th>
-          <th>TOTAL</th>
-          <th>CATEGORY</th>
-          <th>UPDATE</th>
-          <th>DELETE</th>
-        </tr>
-        <tbody id="tbody"></tbody>
-      </table>
-    </div>
+
     <span id="footer">
-      Made with <i class="fa fa-heart pulse"></i> By Haroun Khenfri 2024
+      Made with <span class="heart">❤️</span> in Switzerland by Haroun Khenfri. All rights reserved.
     </span>
+
     <script src="main.js"></script>
   </body>
 </html>
